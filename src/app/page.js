@@ -1,113 +1,140 @@
-import Image from "next/image";
+import React from "react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
-export default function Home() {
+const LeaderBoard = () => {
+  const leaderboardData = [
+    { position: 1, name: "Srinidhi K", points: "18 points" },
+    { position: 2, name: "SHEELENDRA", points: "15 points" },
+    { position: 3, name: "Aryan Nanda", points: "13 points" },
+    { position: 4, name: "Anmol Kapil", points: "12 points" },
+    { position: 5, name: "Akanksha Yadav", points: "11 points"  },
+    { position: 6, name: "Simon Anand", points: "11 points" },
+    { position: 7, name: "Aarush Sharma", points: "11 points" },
+    { position: 8, name: "LATIKA S", points: "10 points" },
+    { position: 9, name: "Kumaresh Basu", points: "10 points" },
+    { position: 10, name: "Kamal Aggarwal", points: "10 points" },
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+    <main className="bg-black flex flex-col items-center justify-center min-h-screen overflow-hidden">
+      <div className="w-full h-full max-w-[1920px] max-h-[1080px]">
+        <img
+          className="absolute w-full h-full top-0 left-0 blur-[3.5px] object-cover"
+          alt="Background"
+          src="https://c.animaapp.com/macop9gcz0nwau/img/5a177b84-e98e-4e98-998d-59980388ca23.png"
         />
-      </div>
+        <div className="absolute w-full h-full top-0 left-0 bg-[#00000073] backdrop-blur-[2.25px]" />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <div className="relative w-full h-full flex flex-col items-center">
+          <h1 className="mt-8 mb-6 text-[#9e0505] text-[28px] sm:text-[36px] md:text-[48px] text-center tracking-[2px] leading-tight px-2 font-normal">
+            LEADERBOARD
+          </h1>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          {/* Top 3 Cards: Mobile View */}
+          <div className="flex flex-col sm:hidden gap-3 mt-4 w-full items-center px-2">
+            {leaderboardData.slice(0, 3).map((entry, idx) => (
+              <Card
+                key={entry.position}
+                className="w-full max-w-[220px] h-[100px] border-0 bg-transparent cursor-pointer transition-transform hover:scale-105 hover:bg-[#ffffff33] hover:shadow-lg"
+              >
+                <CardContent className="relative p-0 h-full">
+                  <div className={`absolute w-full h-[80%] bottom-0 left-0 rounded-2xl ${
+                    idx === 0
+                      ? "bg-[#41363680] border-2 border-dashed border-[#c0551b]"
+                      : "bg-gradient-to-tr from-white/30 to-white/10"
+                  }`} />
+                  <div className="relative flex flex-col items-center justify-end h-full pb-2">
+                    <div className="text-white text-lg font-normal">{entry.name}</div>
+                    <div className="text-white text-[16px] font-normal">{entry.points}</div>
+                    <div className="absolute left-1/2 -translate-x-1/2 -top-1 z-10">
+                      <div
+                        className="bg-cover bg-center w-[40px] h-[40px] rounded-full flex items-center justify-center shadow-md"
+                        style={{
+                          backgroundImage: `url(https://c.animaapp.com/macop9gcz0nwau/img/ellipse-1${idx === 0 ? "-1" : idx === 1 ? "-2" : ""}.svg)`,
+                        }}
+                      >
+                        <span className="text-black text-[18px]">{entry.position}</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          {/* Top 3 Cards: Desktop View */}
+          <div className="hidden sm:flex flex-row justify-center gap-4 mt-8 w-full items-center px-2">
+            {[1, 0, 2].map((i) => {
+              const entry = leaderboardData[i];
+              return (
+                <Card
+                  key={entry.position}
+                  className="w-full max-w-[220px] sm:w-[240px] sm:h-[120px] border-0 bg-transparent cursor-pointer transition-transform hover:scale-105 hover:bg-[#ffffff33] hover:shadow-lg"
+                >
+                  <CardContent className="relative p-0 h-full">
+                    <div
+                      className={`absolute w-full bottom-0 left-0 rounded-2xl ${
+                        i === 0
+                          ? "h-[110px] bg-[#41363680] border-[5px] border-dashed border-[#c0551b]"
+                          : "h-[80%] bg-gradient-to-tr from-white/30 to-white/10"
+                      }`}
+                    />
+                    <div className="relative flex flex-col items-center justify-end h-full pb-4">
+                      <div className="text-white text-xl sm:text-2xl font-normal">{entry.name}</div>
+                      <div className="text-white text-[16px] sm:text-[20px] font-normal">{entry.points}</div>
+                      <div className="absolute left-1/2 -translate-x-1/2 -top-10">
+                        <div
+                          className="bg-cover bg-center w-[56px] h-[56px] rounded-full flex items-center justify-center"
+                          style={{
+                            backgroundImage: `url(https://c.animaapp.com/macop9gcz0nwau/img/ellipse-1${i === 0 ? "-1" : i === 1 ? "-2" : ""}.svg)`,
+                          }}
+                        >
+                          <span className="text-black text-[28px] sm:text-[36px]">{entry.position}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          {/* Ranks 4 to 10 */}
+          <div className="w-[98vw] max-w-2xl sm:w-[900px] mt-6 px-2">
+            {leaderboardData.slice(3).map((entry) => (
+              <Card
+                key={entry.position}
+                className="w-full h-[44px] sm:h-[56px] mb-2 sm:mb-3 rounded-xl sm:rounded-2xl border-0 bg-[#ffffff1a] cursor-pointer transition-transform hover:scale-105 hover:bg-[#ffffff66] hover:shadow-lg"
+              >
+                <CardContent className="relative w-full h-full flex items-center justify-between px-4">
+                  <Badge className="bg-transparent p-0">
+                    <div className="bg-[#d9d9d9] rounded-xl w-7 sm:w-9 h-7 sm:h-9 flex items-center justify-center">
+                      <div className="text-black text-[15px] sm:text-[22px]">{entry.position}</div>
+                    </div>
+                  </Badge>
+                  <div className="text-white text-[18px] sm:text-[24px]">{entry.name}</div>
+                  <div className="text-white text-[15px] sm:text-[20px]">{entry.points}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Decorations */}
+        <img
+          className="hidden sm:block absolute left-0 bottom-0 h-full max-h-[110vh] w-auto object-contain"
+          src="https://c.animaapp.com/macop9gcz0nwau/img/picsart-25-04-23-00-35-47-789.png"
+          alt="Decorative left"
+        />
+        <img
+          className="hidden sm:block absolute right-0 bottom-0 h-full max-h-[110vh] w-auto object-contain"
+          src="https://c.animaapp.com/macop9gcz0nwau/img/picsart-25-04-23-00-36-27-564-1.png"
+          alt="Decorative right"
+        />
       </div>
     </main>
   );
-}
+};
+
+export default LeaderBoard;
